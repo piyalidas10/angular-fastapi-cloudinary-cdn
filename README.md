@@ -68,6 +68,45 @@ Two APIs will be triggered
 1. http://localhost:8000/api/sign-upload (POST)
 2. https://api.cloudinary.com/v1_1/dswtizsvv/image/upload (POST)
 
+## 🧱 Full Project Structure
+```
+project-root/
+│
+├── docker-compose.yml
+├── .env                // For cloudinary api_key & api_secret
+├── backend/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   │
+│   └── app/
+│       ├── __init__.py
+│       ├── main.py
+│       ├── routes.py
+│       ├── cloudinary_service.py
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── package.json
+│   ├── angular.json
+│   │
+│   └── src/
+│       ├── main.ts
+│       ├── index.html
+│       │
+│       └── app/
+│           ├── app.component.ts
+│           ├── app.component.html
+│           ├── app.component.scss
+│           ├── optimized-image/
+│               |──cloudinary.service.ts
+│               |── optimized-image.component.ts
+│               |── optimized-image.component.html
+│               └── optimized-image.component.scss
+│
+└── README.md
+```
+
 ## 🧠 Why node_modules is NOT in your frontend folder
 
 You are running:
