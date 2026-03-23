@@ -1,0 +1,41 @@
+<div class="image-wrapper" #imgRef>
+
+  <!-- 🔥 Skeleton (initial state before entering viewport) -->
+  @if (!isInView && !hasError) {
+    <div class="skeleton"></div>
+  }
+
+  <!-- 🔥 Blur Placeholder (shown when in viewport but not loaded yet) -->
+  @if (isInView && !isLoaded && !hasError) {
+    <img
+      [src]="blurUrl"
+      class="blur-image"
+      [alt]="alt"
+    />
+  }
+
+  <!-- 🚀 Main Image -->
+  @if (isInView && !hasError) {
+    <img
+      [src]="mainUrl"
+      [attr.srcset]="getSrcSet()"
+      sizes="(max-width: 600px) 100vw, 400px"
+      [alt]="alt"
+      class="main-image"
+      [class.visible]="isLoaded"
+      (load)="onLoad()"
+      (error)="onError()"
+    />
+  }
+
+  <!-- ❌ Fallback -->
+  @if (hasError) {
+    <div class="fallback">
+      <span class="material-icons">broken_image</span>
+    </div>
+    <div class="error">
+      Image failed to load
+    </div>
+  }
+
+</div>

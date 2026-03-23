@@ -1,0 +1,38 @@
+<div class="container">
+
+  <h2>Upload Image</h2>
+
+  <!-- File Input -->
+  <input type="file" (change)="onFileSelected($event)" />
+
+  <!-- Progress Bar -->
+   @if(isUploading) {
+    <div class="progress-container">
+      <div class="progress-bar" [style.width.%]="uploadProgress"></div>
+    </div>
+    <p>{{ uploadProgress }}%</p>
+  }
+
+  <!-- 🔥 Instant Preview (before optimized loads) -->
+   @if(imageUrl && !imagePublicId) {
+    <div class="preview">
+      <h3>Uploading Preview</h3>
+      <img [src]="imageUrl" />
+    </div>
+  }
+
+  <!-- 🚀 Optimized Image (final render from Cloudinary) -->
+   @if(imagePublicId && imageUrl) {
+     <div class="preview">
+       <h3>Optimized Image</h3>
+       <app-optimized-image
+         [publicId]="imagePublicId"
+         [imageUrl]="imageUrl"
+         [width]="400"
+         [height]="300"
+         alt="Uploaded image">
+       </app-optimized-image>
+     </div>
+   }
+
+</div>
