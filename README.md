@@ -20,7 +20,7 @@ Go to:
 Sign up (free tier is enough) Or login if you already have account
 <img src="imgs/cloudinary.png" width="100%" />
 
-copy credentials & add inside .env
+Create a .env file inside root folder. then copy credentials & add inside .env
 ```
 CLOUDINARY_CLOUD_NAME='demo123'
 CLOUDINARY_API_KEY='123456789012345'
