@@ -138,19 +138,6 @@ w_400,q_auto,f_auto
 ```
 ✅ Store only public_id in DB (not full URL)    
 
-
-
-## 🔥 API Endpoints Summary
-| Method | Endpoint                  | Purpose                |
-| ------ | ------------------------- | ---------------------- |
-| POST   | `/upload`                 | Upload single image    |
-| POST   | `/upload-multiple`        | Upload multiple images |
-| DELETE | `/delete/{public_id}`     | Delete image           |
-| GET    | `/image-url/{public_id}`  | Get optimized CDN URL  |
-| GET    | `/responsive/{public_id}` | Get responsive sizes   |
-| GET    | `/details/{public_id}`    | Get metadata           |
-
-
 ## 🧠 Why These Packages?
 **requirements.txt inside backend folder**
 
